@@ -1,0 +1,77 @@
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+header{
+	background-color: darkblue;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 0.5rem;
+	align-items: center;
+	margin: 0;
+}
+
+header h1{
+	display: inline-block;
+	color: white;
+	font-weight: bold;
+	font-size: 2rem;
+}
+
+header .add_student_button{
+	background-color: lightblue;
+	color: white;
+	padding: 0.4rem;
+	height: fit-content;
+	text-align: center;
+}
+
+.contenido{
+	background-color: lightgray;
+	margin: auto;
+	padding-inline: 4rem;
+}
+
+.content_title{
+	padding-top: 1rem;
+	font-size: 1.75rem;
+}
+
+.main_content{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+}
+
+.student_card{
+	background-color: white;
+	margin-inline: 0.5rem;
+}
+
+.student_card h1{
+	font-size: 1.5rem;
+}
+
+.student_card h2{
+	font-size: 1.35rem;
+	color: #00A0ED;
+}
+
+.student_card button{
+	background-color: #00A0ED;
+	color: white;
+	padding: 0.4rem;
+}
+
+.student_card img{
+	background-color: black;
+}
+
+content .div1 { grid-area: 1 / 1 / 2 / 2; }
+content .div2 { grid-area: 1 / 2 / 2 / 3; }
+content .div3 { grid-area: 1 / 3 / 2 / 4; }
