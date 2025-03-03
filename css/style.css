@@ -4,6 +4,10 @@
 	border: 0;
 }
 
+body{
+	background-color: lightgray;
+}
+
 header{
 	background-color: darkblue;
 	display: flex;
@@ -30,7 +34,6 @@ header .add_student_button{
 }
 
 .contenido{
-	background-color: lightgray;
 	margin: auto;
 	padding-inline: 4rem;
 }
@@ -38,19 +41,24 @@ header .add_student_button{
 .content_title{
 	padding-top: 1rem;
 	font-size: 1.75rem;
+	margin-bottom: 1rem;
 }
 
 .main_content{
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(2, 1fr);
-	grid-column-gap: 0px;
-	grid-row-gap: 0px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+	align-content: flex-start;
+	gap: 15px;
 }
 
 .student_card{
+	width: 30rem;
+	border-radius: 20px;
 	background-color: white;
-	margin-inline: 0.5rem;
+	padding-bottom: 5px;
 }
 
 .student_card h1{
@@ -66,10 +74,19 @@ header .add_student_button{
 	background-color: #00A0ED;
 	color: white;
 	padding: 0.4rem;
+	margin-top: 0.3rem;
+	margin-left: 0.4rem;
+	border-radius: 5px;
+}
+
+.student_card .student_text{
+	padding: 0.5rem;
 }
 
 .student_card img{
 	background-color: black;
+	width: 100%;
+	border-radius: 20px 20px 0 0;
 }
 
 content .div1 { grid-area: 1 / 1 / 2 / 2; }
