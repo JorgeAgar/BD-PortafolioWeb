@@ -1,0 +1,21 @@
+body{
+    background-color: #efefef;
+}
+
+.form-box{
+    margin: auto;
+    margin-top: 10%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 600px;
+}
+
+.form-item{
+    width: 100%;
+}
