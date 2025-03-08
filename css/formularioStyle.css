@@ -1,10 +1,20 @@
 body{
     background-color: #efefef;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+}
+
+.titulo{
+    font-size: 3rem;
+    margin-inline: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .form-box{
     margin: auto;
-    margin-top: 10%;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -14,8 +24,48 @@ body{
     padding: 2rem;
     width: 90%;
     max-width: 600px;
+    border: 2px solid black;
+    border-radius: 25px;
 }
 
 .form-item{
     width: 100%;
+    padding: 0.5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: darkgray;
+    border-width: 1px;
+}
+
+.botones-box{
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    gap: 25px;
+}
+
+.boton{
+    padding: 0.6rem;
+    border-radius: 10px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.enviar{
+    order: 2;
+    background-color: #454545;
+    border-style: none;
+    color: white;
+    box-shadow: none;
+}
+
+.cancelar{
+    order: 1;
+    border-width: 1px;
+    border-color: lightgray;
+    background-color: white;
+    border-style: solid;
 }
