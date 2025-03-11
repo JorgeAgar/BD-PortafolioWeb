@@ -62,10 +62,20 @@ body{
     box-shadow: none;
 }
 
+.enviar:hover{
+    background-color: #606060;
+}
+
 .cancelar{
     order: 1;
+    color: #252525;
     border-width: 1px;
     border-color: lightgray;
     background-color: white;
     border-style: solid;
+    text-decoration: none;
+}
+
+.cancelar:hover{
+    background-color: #eeeeee;
 }

@@ -2,6 +2,7 @@
 	margin: 0;
 	padding: 0;
 	border: 0;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body{
@@ -79,20 +80,21 @@ header .add_student_button:hover{
 	color: #00A0ED;
 }
 
-.student_card button{
+.student_card .button-div{
+	padding-top: 0.5rem;
+}
+
+.student_card .github-link{
 	background-color: #00A0ED;
 	padding: 0.4rem;
 	margin-top: 0.3rem;
 	margin-left: 0.4rem;
 	border-radius: 5px;
-}
-
-.student_card button a{
 	color: white;
 	text-decoration: none;
 }
 
-.student_card button a:hover{
+.student_card .github-link{
 	text-decoration: none;
 }
 
