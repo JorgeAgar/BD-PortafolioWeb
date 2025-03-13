@@ -77,33 +77,68 @@ header .add_student_button:hover{
 
 .student_card h2{
 	font-size: 1.35rem;
-	color: #00A0ED;
+	color: #075dbe;
 }
 
 .student_card .button-div{
 	padding-top: 0.5rem;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
 }
 
 .student_card .github-link{
-	background-color: #00A0ED;
+	background-color: #43f2ff;
 	padding: 0.4rem;
-	margin-top: 0.3rem;
 	margin-left: 0.4rem;
-	border-radius: 5px;
-	color: white;
+	border-radius: 10px;
+	color: black;
 	text-decoration: none;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	height: 2rem;
 }
 
-.student_card .github-link{
-	text-decoration: none;
+.student_card .edit{
+	height: 2rem;
+	border-radius: 10px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: lightgray;
+	background-color: white;
+	padding: 0.4rem 1rem 0.4rem 1rem;
+}
+
+.student_card .button-div *{
+	font-size: 1rem;
+}
+
+.student_card .details{
+	height: 2rem;
+	border-radius: 10px;
+	background-color: black;
+	color: white;
+	padding: 0.4rem 1rem 0.4rem 1rem;
 }
 
 .student_card .student_text{
 	padding: 0.5rem;
 }
 
+.student_card .github-link img{
+	background-color: transparent;
+	height: 90%;
+	width: auto;
+	margin-right: 10px;
+}
+
 .student_card img{
+	max-height: 300px;
 	background-color: black;
+	object-fit: cover;
 	width: 100%;
 	border-radius: 20px 20px 0 0;
 }
