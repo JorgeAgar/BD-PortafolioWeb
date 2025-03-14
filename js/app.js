@@ -17,7 +17,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             clone.querySelector('.student-email').textContent = student.email;
             clone.querySelector('.student-image').src = student.photo;
             clone.querySelector('.github-link').href = `https://github.com/${student.github_link}`;
-
+            clone.querySelector('.edit').onclick = () => {
+                window.location.href = 'edit.html?code=' + student.code;
+            };
             studentsList.appendChild(clone);
         });
     }
