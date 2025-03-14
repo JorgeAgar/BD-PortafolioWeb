@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Edit Student</title>
+        <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/formularioStyle.css">
+    </head>
+    <body>
+        <h1 class="titulo">Editar Estudiante</h1>
+         <form action="#" class="form-box" id="formulario">
+            <input type="text" placeholder="Nombre" class="form-item nombre" id="nombre" required>
+            <input type="number" placeholder="Código" class="form-item codigo" id="codigo" required>
+            <input type="email" placeholder="Correo" class="form-item email" id="email" required>
+            <input type="text" placeholder="Descripcion" class="form-item descripcion" id="descripcion">
+            <input type="text" placeholder="Perfil de Github" class="form-item github" id="github">
+            <input type="text" placeholder="URL de foto" class="form-item foto" id="fotoURL">
+            <div class="botones-box">
+                <button class="enviar boton" id="saveStudent">Guardar Estudiante</button>
+                <a href="index.html" class="cancelar boton">Volver</a>
+            </div>
+         </form>
+         <script src="js/api.js" type="text/javascript"></script>
+         <script src="js/edit.js" type="text/javascript"></script>
+    </body>
+</html>
