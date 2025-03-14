@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const studentsList = document.getElementById('studentsList');
     const template = document.getElementById('studentCardTemplate');
+    const detailsTemplate = document.getElementById('studentDetailsTemplate');
 
     // Render students
     async function renderStudents() {
@@ -20,6 +21,17 @@ document.addEventListener('DOMContentLoaded', async () => {
             clone.querySelector('.edit').onclick = () => {
                 window.location.href = 'edit.html?code=' + student.code;
             };
+            clone.querySelector('.details').onclick = () => {
+                const detailsClone = detailsTemplate.content.cloneNode(true);
+
+                detailsClone.querySelector('.details-student-image').src = student.photo;
+                detailsClone.querySelector('.details-name').textContent = student.name;
+                detailsClone.querySelector('.details-code').textContent = student.code;
+                detailsClone.querySelector('.details-student-description').textContent = student.description;
+                fillTechnologies(detailsClone.querySelector('.details-student-technologies'), student.code);
+                document.body.appendChild(detailsClone);
+
+            };
             studentsList.appendChild(clone);
         });
     }
@@ -28,3 +40,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     await renderStudents();
 
 });
+
+async function fillTechnologies(ulist, student_code){
+
+}

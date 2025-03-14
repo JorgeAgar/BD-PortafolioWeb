@@ -17,7 +17,8 @@ function getQueryParam(url, param){
     return urlObj.searchParams.get(param);
 }
 
-document.getElementById('saveStudent').onclick = async () => {
+document.getElementById('saveStudent').onclick = async (event) => {
+    event.preventDefault();
     if(!form.checkValidity()){
         return;
     }
@@ -35,7 +36,7 @@ document.getElementById('saveStudent').onclick = async () => {
         console.log(estudiante);
         let response = await api.updateStudent(id, estudiante);
         console.log(response);
-        // alert("Estudiante creado exitosamente");
+        alert("Estudiante editado exitosamente");
     } catch (error) {
         console.error(error);
     }
