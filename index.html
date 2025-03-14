@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Portafolio web</title>
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/details.css">
 </head>
 <body>
 	<header>
@@ -36,18 +37,58 @@
 	</template>
 	<template id="studentDetailsTemplate">
 		<div class="details-view">
-			<div class="details-student-info">
-				<button class="details-back"></button>
-				<img class="details-student-image">
-				<div class="details-namecode">
-					<h2 class="details-name"></h2>
-					<h2 class="details-code"></h2>
+			<button class="details-back"></button>
+			<div class="details-main">
+				<div class="details-student-info">
+					<img class="details-student-image">
+					<div class="details-student-data">
+						<h2 class="details-name"></h2>
+						<h2 class="details-code"></h2>
+						<h3 class="details-email"></h3>
+						<a href="" class="details-github">GitHub Profile</a>
+					</div>
+					<p class="details-student-description"></p>
 				</div>
-				<p class="details-student-description"></p>
+				<ul class="details-student-technologies">
+	
+				</ul>
 			</div>
-			<ul class="details-student-technologies">
-
-			</ul>
+		</div>
+	</template>
+	<template id="technologyTemplate">
+		<div class="technology-item-box">
+			<div class="tech-details">
+				<img class="tech-img">
+				<div class="tech-namequal">
+					<h3 class="tech-name"></h3>
+					<div class="tech-stars">
+						<svg width="25" height="25" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<polygon points="12,2 15,8.5 22,9.3 17,14 18.2,21 12,17.8 5.8,21 7,14 2,9.3 9,8.5"
+							  fill="yellow" stroke="black" stroke-width="2"/>
+						</svg>
+						<svg width="25" height="25" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<polygon points="12,2 15,8.5 22,9.3 17,14 18.2,21 12,17.8 5.8,21 7,14 2,9.3 9,8.5"
+							  fill="yellow" stroke="black" stroke-width="2"/>
+						</svg>
+						<svg width="25" height="25" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<polygon points="12,2 15,8.5 22,9.3 17,14 18.2,21 12,17.8 5.8,21 7,14 2,9.3 9,8.5"
+							  fill="yellow" stroke="black" stroke-width="2"/>
+						</svg>
+						<svg width="25" height="25" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<polygon points="12,2 15,8.5 22,9.3 17,14 18.2,21 12,17.8 5.8,21 7,14 2,9.3 9,8.5"
+							  fill="yellow" stroke="black" stroke-width="2"/>
+						</svg>
+						<svg width="25" height="25" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<polygon points="12,2 15,8.5 22,9.3 17,14 18.2,21 12,17.8 5.8,21 7,14 2,9.3 9,8.5"
+							  fill="yellow" stroke="black" stroke-width="2"/>
+						</svg>
+					</div>
+				</div>
+			</div>
+			<div class="tech-buttons">
+				<button id="tech-edit-button"></button>
+				<button id="tech-delete-button"></button>
+			</div>
 		</div>
 	</template>
 	<script type="text/javascript" src="js/api.js"></script>
