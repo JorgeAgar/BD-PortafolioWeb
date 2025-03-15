@@ -30,6 +30,12 @@ document.addEventListener('DOMContentLoaded', async () => {
                 detailsClone.querySelector('.details-email').textContent = student.email;
                 detailsClone.querySelector('.details-github').href = `https://github.com/${student.github_link}`;
                 detailsClone.querySelector('.details-student-description').textContent = student.description;
+                detailsClone.querySelector('.details-back').onclick = () => {
+                    const viewInstance = document.body.querySelector('.details-view');
+                    console.log(viewInstance);
+                    viewInstance.style.display = 'none';
+                    document.body.removeChild(viewInstance);
+                }
                 await fillTechnologies(detailsClone.querySelector('.details-student-technologies'), student.code);
                 document.body.appendChild(detailsClone);
 
@@ -50,7 +56,8 @@ async function fillTechnologies(ulist, student_code){
     technologies.forEach(technology => {
         const clone = tech_template.content.cloneNode(true);
         clone.querySelector('.tech-name').textContent = technology.technology.name;
-        clone.querySelector('tech-img').src = technology.technology.image;
+        clone.querySelector('.tech-img').src = technology.technology.image;
+        ulist.appendChild(clone);
         console.log(clone.querySelector('.tech-stars'));
     });
 }

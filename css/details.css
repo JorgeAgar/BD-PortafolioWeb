@@ -12,12 +12,25 @@
     z-index: 10;
 }
 
+.details-back{
+    background: transparent;
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+.details-back:hover{
+    border-radius: 15px;
+    border-color: black;
+    border-style: solid;
+}
+
 .details-main{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
+    justify-content: space-evenly;
+    align-items: stretch;
+    align-content: stretch;
+    column-gap: 1rem;
 }
 
 .details-student-info{
@@ -33,7 +46,7 @@
     column-gap: 1.25rem;
 
     .details-student-image{
-        width: 100px;
+        width: 250px;
         height: auto;
     }
 }
@@ -42,4 +55,33 @@
     border-style: solid;
     border-width: 2px;
     border-color: black;
+}
+
+.details-student-technologies{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    row-gap: 10px;
+}
+
+
+.technology-item-box{
+    max-height: 5rem;
+}
+
+.tech-details{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.tech-img{
+    height: 85%;
+    width: auto;
+
 }
