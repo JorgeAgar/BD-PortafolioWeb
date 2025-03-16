@@ -24,8 +24,9 @@ document.getElementById("crearStudent").addEventListener("click", () => {
         console.log(estudiante);
         let response = api.createStudent(estudiante);
         console.log(response);
-        // alert("Estudiante creado exitosamente");
+        alert("Estudiante creado exitosamente");
     } catch (error) {
         console.error(error);
+        alert("hubo un error");
     }
 });
