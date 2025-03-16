@@ -112,6 +112,10 @@ header .add_student_button:hover{
 	padding: 0.4rem 1rem 0.4rem 1rem;
 }
 
+.student_card .edit:hover{
+	background-color: lightgray;
+}
+
 .student_card .button-div *{
 	font-size: 1rem;
 }
@@ -122,6 +126,10 @@ header .add_student_button:hover{
 	background-color: black;
 	color: white;
 	padding: 0.4rem 1rem 0.4rem 1rem;
+}
+
+.student_card .details:hover{
+	background-color: #404040;
 }
 
 .student_card .student_text{
