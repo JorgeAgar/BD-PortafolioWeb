@@ -38,6 +38,7 @@ document.getElementById('saveStudent').onclick = async (event) => {
         console.log(response);
         alert("Estudiante editado exitosamente");
     } catch (error) {
+        alert("No se pudo realizar la acción");
         console.error(error);
     }
 };

@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     viewInstance.style.display = 'none';
                     document.body.removeChild(viewInstance);
                 }
-                await fillTechnologies(detailsClone.querySelector('.details-student-technologies'), student.code);
+                await renderTechnologies(detailsClone.querySelector('.details-student-technologies'), student.code);
                 document.body.appendChild(detailsClone);
 
             };
@@ -51,8 +51,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 const tech_template = document.getElementById('technologyTemplate');
 const star_template = document.getElementById('starTemplate');
+const edit_template = document.getElementById('editTechTemplate');
 
-async function fillTechnologies(ulist, student_code){
+async function renderTechnologies(ulist, student_code){
+    ulist.innerHTML = '';
     const technologies = await api.getStudentTechnologies(student_code);
 
     technologies.forEach(technology => {
@@ -61,12 +63,66 @@ async function fillTechnologies(ulist, student_code){
         for(let i = 0; i < rating; i++){
             const starList = clone.querySelector('.tech-stars');
             const starClone = star_template.content.cloneNode(true);
-            console.log(starList);
-            console.log(clone);
+            // console.log(starList);
+            // console.log(clone);
             starList.appendChild(starClone);
         }
         clone.querySelector('.tech-name').textContent = technology.technology.name;
         clone.querySelector('.tech-img').src = technology.technology.image;
+        clone.querySelector('#tech-delete-button').onclick = async () => {
+            try {
+                let response = await api.deleteStudentTechnology(student_code, technology.technology.code);
+                console.log(response);
+                alert("Se borró la tecnología exitosamente");
+                renderTechnologies(ulist, student_code);
+                return;
+            } catch (error) {
+                alert("Ha ocurrido un error");
+                console.error(error);
+            }
+        };
+        clone.querySelector('#tech-edit-button').onclick = async () => {
+            let cloneEdit = edit_template.content.cloneNode(true);
+            cloneEdit.querySelector('.edit-tech-technology-name').textContent = technology.technology.name;
+            cloneEdit.querySelector('.edit-tech-technology-logo').src = technology.technology.image;
+
+            const editContainer = document.body.querySelector('.details-view');
+            editContainer.appendChild(cloneEdit);
+
+            cloneEdit = editContainer.querySelector('.edit-tech-container');
+
+            cloneEdit.querySelector('.edit-tech-save').onclick = async () => {
+                try {
+                    const fieldSet = editContainer.querySelector('#editTechFieldset')
+                    let newLevel = 0;
+                    if(fieldSet.querySelector('#level1').checked){
+                        newLevel = 1;
+                    } else if(fieldSet.querySelector('#level2').checked){
+                        newLevel = 2;
+                    }else if(fieldSet.querySelector('#level3').checked){
+                        newLevel = 3;
+                    }else if(fieldSet.querySelector('#level4').checked){
+                        newLevel = 4;
+                    }else if(fieldSet.querySelector('#level5').checked){
+                        newLevel = 5;
+                    }
+    
+                    let response = await api.updateStudentTechnology(student_code, technology.technology.code, newLevel);
+                    console.log(response);
+                    renderTechnologies(ulist, student_code);
+                    return;
+                } catch (error) {
+                    alert("ha ocurrido un error");
+                    console.error(error);
+                }
+            };
+
+            cloneEdit.querySelector('.edit-tech-cancel').onclick = () => {
+                cloneEdit.style.display = 'none';
+                editContainer.removeChild(cloneEdit);
+            };
+            
+        };
         ulist.appendChild(clone);
     });
 }
